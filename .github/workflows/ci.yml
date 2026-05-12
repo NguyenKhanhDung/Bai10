@@ -13,5 +13,6 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
+        working-directory: ./
         run: mvn package
 
