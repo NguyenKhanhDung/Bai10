@@ -1,10 +1,9 @@
-package com.lab;
-
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ShippingCalculatorTest {
-    ShippingCalculator calc = new ShippingCalculator();
+
+    com.lab.ShippingCalculator calc = new com.lab.ShippingCalculator();
 
     @Test
     void testStandard() {
@@ -21,5 +20,8 @@ public class ShippingCalculatorTest {
         assertThrows(IllegalArgumentException.class,
                 () -> calc.calculate(-1, "STANDARD"));
     }
-
+    @Test
+    void testNullType(){
+        assertThrows(IllegalArgumentException.class, () -> calc.calculate(8,null));
+    }
 }
